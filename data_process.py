@@ -23,10 +23,19 @@ df = df[df['job_title'].str.contains("engineer") | df['job_title'].str.contains(
 
 print("Filtered out non-engineering roles. New size " + str(len(df)) )
 
+def bay_area_filter(row):
+	found = False
+	found |= 'San Francisco' in row.address
+	found |= 'Menlo Park' in row.address
+	found |= 'Palo Alto' in row.address
+	found |= 'Mountain View' in row.address
+	found |= 'Redwood City' in row.address
+	return found
+
 #Create New Columns for geographies
 df['NYC'] = df.apply(lambda row: 'New York' in row.address, axis=1)
 df['LA'] = df.apply(lambda row: 'Los Angeles' in row.address, axis=1)
-df['SF'] = df.apply(lambda row: 'San Francisco' in row.address, axis=1)
+df['SF'] = df.apply(bay_area_filter, axis=1)
 df['SEA'] = df.apply(lambda row: 'Seattle' in row.address, axis=1)
 
 ##Create binary variable for seniority
@@ -58,8 +67,9 @@ df['avg_size'] = df.apply(avg_size, axis=1)
 pdb.set_trace()
 
 #write out new dataset
-df.to_csv('cleaned_data.csv')
+dataset_name = 'cleaned_data_better.csv'
+df.to_csv(dataset_name)
 
-print("Cleaned dataset output as cleaned_data.csv")
+print("Cleaned dataset output as " + dataset_name)
 
 
