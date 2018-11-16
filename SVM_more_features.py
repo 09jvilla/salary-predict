@@ -8,57 +8,23 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import LinearSVC, SVC, SVR
 from sklearn.metrics import accuracy_score
 
-df = pd.read_csv('data/cleaned_data.csv')
-
-#figure out salary buckets
-min_sal_sorted_df = df.sort_values(by=['min_salary'])
-max_sal_sorted_df = df.sort_values(by=['max_salary'])
-
-plt.plot(min_sal_sorted_df['min_salary'].tolist(), 'bo')
-plt.plot(max_sal_sorted_df['max_salary'].tolist(), 'ro')
-
-plt.savefig("salary_scurve.png")
-
-#Ok lets do some bucketing
-min_sal_buckets = range(50000,210000,10000)
-num_buckets = len(min_sal_buckets)+1
-
-def bucket_to_range(bucket):
-	if bucket == 0:
-		bucket_str = "<" + str(min_sal_buckets[0])
-		return bucket_str
-
-	if bucket == len(min_sal_buckets):
-		bucket_str = ">" + str(min_sal_buckets[-1])
-		return bucket_str
-
-	bottom = min_sal_buckets[bucket-1]
-	top = min_sal_buckets[bucket]
-
-	return str(bottom) + "-" + str(top)
-
-def min_class_bucket(row):
-	proper_bucket = -1
-	
-	if row.min_salary < min_sal_buckets[0]:
-		return 0
-
-	elif row.min_salary >= min_sal_buckets[-1]:
-		return len(min_sal_buckets)
-
-	for i in range(1,len(min_sal_buckets)):
-		
-		if row.min_salary >= min_sal_buckets[i-1] and row.min_salary < min_sal_buckets[i]:
-			return i
+df = pd.read_csv('data/train_data_with_salary_buckets.csv')
 
 
-df['salary_bucket'] = df.apply(min_class_bucket, axis=1)
-df = df.astype( {'salary_bucket':int } )
+print("Num datapoints: " + str(len(df)))
 
-df.to_csv("data/train_data_with_salary_buckets.csv")
+##filter out low salaries
+df = df[ (df.min_salary > 40000) & (df.max_salary > 40000) ]
+print("Num datapoints after removing low salaries: " + str(len(df)))
+
+##filter out companies with no average size
+df = df[ df.avg_size.notnull() ]
+print("Num datapoints after no num employees: " + str(len(df)))
+
+
 
 df_XforSVM = df.filter(['is_acquired', 'is_public', 'remote_ok', 'NYC', \
-	'LA', 'SF', 'SEA', 'senior', 'back_end', 'full_stack', 'front_end'], axis=1)
+	'LA', 'SF', 'SEA', 'senior', 'back_end', 'full_stack', 'front_end', 'avg_size'], axis=1)
 df_YforSVM = df.filter(['salary_bucket'], axis=1 )
 
 clf = LinearSVC(random_state=0, tol=1e-5, max_iter=10000)
@@ -110,7 +76,7 @@ plt.xticks(rotation=90)
 plt.xlabel("Pair (true_class,predicted_class)")
 plt.ylabel("Count")
 plt.title("Error Analysis for Multi-Class SVM")
-plt.savefig("SVM_error_analysis")
+#plt.savefig("SVM_error_analysis")
 plt.show()
 
 ##Notes: 
