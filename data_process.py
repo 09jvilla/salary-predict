@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import math
 
-df = pd.read_csv('train.csv')
+df = pd.read_csv('./data/train.csv')
 
 ##Filter out positions where min salary is 0 and where max salary is 0
 
@@ -41,8 +41,6 @@ df['SEA'] = df.apply(lambda row: 'Seattle' in row.address, axis=1)
 ##Create binary variable for seniority
 df['senior'] = df.apply(lambda row: row.seniority == 'senior' or row.seniority == 'staff', axis=1)
 
-
-
 ##first replace any NaN values in this column; instead put in string "N/A"
 values = {'roles' : "N/A"}
 df = df.fillna(value=values)
@@ -63,13 +61,12 @@ def avg_size(row):
 #apply function to dataframe
 df['avg_size'] = df.apply(avg_size, axis=1)
 
+#####Todo: feature scaling for faster convergence
 
-pdb.set_trace()
+# pdb.set_trace()
 
 #write out new dataset
-dataset_name = 'cleaned_data_better.csv'
+dataset_name = './output/cleaned_data_better.csv'
 df.to_csv(dataset_name)
 
 print("Cleaned dataset output as " + dataset_name)
-
-

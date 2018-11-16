@@ -39,7 +39,7 @@ def bucket_to_range(bucket):
 
 def min_class_bucket(row):
 	proper_bucket = -1
-	
+
 	if row.min_salary < min_sal_buckets[0]:
 		return 0
 
@@ -47,7 +47,7 @@ def min_class_bucket(row):
 		return len(min_sal_buckets)
 
 	for i in range(1,len(min_sal_buckets)):
-		
+
 		if row.min_salary >= min_sal_buckets[i-1] and row.min_salary < min_sal_buckets[i]:
 			return i
 
@@ -111,16 +111,11 @@ plt.title("Error Analysis for Multi-Class SVM")
 plt.savefig("SVM_error_analysis")
 plt.show()
 
-##Notes: 
-#Only predicting really into 3 classes for anything 0,3,4,6 and sometimes 8. 
-#does that mean I should try fewer buckets? 
+##Notes:
+#Only predicting really into 3 classes for anything 0,3,4,6 and sometimes 8.
+#does that mean I should try fewer buckets?
 #1) try to incorporate company size; filter out cases with no size
 
 
 
 print("Done!")
-
-
-
-
-
