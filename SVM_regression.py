@@ -11,10 +11,11 @@ from sklearn.metrics import accuracy_score
 use_full_data = False
 #Use full data
 if use_full_data:
-	df = pd.read_csv('output/cleaned_data.csv')
+	df = pd.read_csv('data/cleaned_data.csv')
 else:
-	df = pd.read_csv('output/low_salaries_removed.csv')	
+	df = pd.read_csv('data/low_salaries_removed.csv')	
 
+df = df[df.min_salary < 500000]
 
 df_XforSVM = df.filter(['is_acquired', 'is_public', 'remote_ok', 'NYC', \
 	'LA', 'SF', 'SEA', 'senior', 'back_end', 'full_stack', 'front_end'], axis=1)
@@ -38,10 +39,16 @@ Y_train_pred_max = max_rbf_SVR.predict(X_train_max)
 
 #plot
 plt.scatter(x=Y_train_min, y=Y_train_pred_min)
+plt.xlabel('Actual Min Salary')
+plt.ylabel('Predicted Min Salary')
+plt.title('SVR Model performance for Min Salary')
 plt.show()
 
 plt.clf()
 plt.scatter(x=Y_train_max, y=Y_train_pred_max)
+plt.xlabel('Actual Max Salary')
+plt.ylabel('Predicted Max Salary')
+plt.title('SVR Model performance for Max Salary')
 plt.show()
 
 ##Well this currently sucks! Let's try on a smaller subset, where we only look at salaries above 40k
