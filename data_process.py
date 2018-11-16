@@ -64,7 +64,7 @@ def avg_size(row):
 df['avg_size'] = df.apply(avg_size, axis=1)
 
 
-pdb.set_trace()
+# pdb.set_trace()
 
 #write out new dataset
 dataset_name = 'cleaned_data_better.csv'
