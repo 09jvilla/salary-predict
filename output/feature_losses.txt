@@ -1,0 +1,365 @@
+1 features:
+
+Score for feature set: is_acquired:	 0.029722662211717966
+Score for feature set: is_public:	 0.030322983578194473
+Score for feature set: remote_ok:	 0.026752343891215436
+Score for feature set: NYC:	 -0.00027692521451636596
+Score for feature set: LA:	 -0.001530298165825139
+Score for feature set: SF:	 0.1056547476249649
+Score for feature set: SEA:	 -0.00283715089548664
+Score for feature set: senior:	 0.04833618736698201
+Score for feature set: back_end:	 -0.0022225327363299074
+Score for feature set: full_stack:	 -0.00026249793883447174
+Score for feature set: front_end:	 0.0007512198726436714
+Score for feature set: total_investments:	 -0.00021999419876301833
+Score for feature set: seniority_regular:	 0.0524370921943236
+Score for feature set: seniority_senior:	 0.04123853914746136
+Score for feature set: seniority_junior:	 0.01308679204502282
+Score for feature set: seniority_manager:	 0.010435924781173911
+Score for feature set: seniority_staff:	 0.001003124833699809
+Score for feature set: seniority_cxo:	 0.0004500146017576756
+Score for feature set: seniority_vp:	 0.004609667932669692
+Score for feature set: seniority_director:	 0.003075330252871989
+Score for feature set: seniority_intern:	 0.0019948813886032533
+Score for feature set: skills_javascript:	 -0.000526230223476687
+Score for feature set: skills_python:	 0.014050317368654608
+Score for feature set: skills_html:	 0.010729429051139128
+Score for feature set: skills_css:	 0.008607472073277622
+Score for feature set: skills_aws:	 0.004900807166548493
+Score for feature set: skills_java:	 -0.0027282788065562612
+Score for feature set: skills_node:	 -0.002696304151444384
+Score for feature set: skills_ruby:	 -0.0011445351302150296
+Score for feature set: skills_angular:	 -0.0014770036741134196
+Score for feature set: skills_ios:	 -0.0016298165920527797
+Score for feature set: skills_react:	 -0.0022075769657186163
+Score for feature set: skills_linux:	 0.0030183831117892913
+Score for feature set: skills_android:	 -0.002808425556273764
+Score for feature set: skills_rails:	 -0.002573115093786893
+Score for feature set: skills_c:	 0.0011605827761023702
+Max Score feature set: SF	 0.1056547476249649
+
+
+2 features:
+
+Score for feature set: SF,is_acquired:	 0.12628841891303164
+Score for feature set: SF,is_public:	 0.12637250861706015
+Score for feature set: SF,remote_ok:	 0.1278703696690088
+Score for feature set: SF,NYC:	 0.12798643482671865
+Score for feature set: SF,LA:	 0.10579342263226427
+Score for feature set: SF,SEA:	 0.10771058156859425
+Score for feature set: SF,senior:	 0.15471129473314532
+Score for feature set: SF,back_end:	 0.10585397627149488
+Score for feature set: SF,full_stack:	 0.10695050270443635
+Score for feature set: SF,front_end:	 0.10918508420569582
+Score for feature set: SF,total_investments:	 0.10681857478936985
+Score for feature set: SF,seniority_regular:	 0.15929458632062707
+Score for feature set: SF,seniority_senior:	 0.14703687242751717
+Score for feature set: SF,seniority_junior:	 0.11777288325171408
+Score for feature set: SF,seniority_manager:	 0.11633050689284093
+Score for feature set: SF,seniority_staff:	 0.1096507591403917
+Score for feature set: SF,seniority_cxo:	 0.10782453282045532
+Score for feature set: SF,seniority_vp:	 0.1127157701344392
+Score for feature set: SF,seniority_director:	 0.11063756922588489
+Score for feature set: SF,seniority_intern:	 0.1106904107136193
+Score for feature set: SF,skills_javascript:	 0.10635017961719949
+Score for feature set: SF,skills_python:	 0.11767340592788497
+Score for feature set: SF,skills_html:	 0.11365399803117154
+Score for feature set: SF,skills_css:	 0.11250109772825924
+Score for feature set: SF,skills_aws:	 0.114325188560508
+Score for feature set: SF,skills_java:	 0.1056627998449371
+Score for feature set: SF,skills_node:	 0.10553970815273392
+Score for feature set: SF,skills_ruby:	 0.10732664643880781
+Score for feature set: SF,skills_angular:	 0.10576114254822913
+Score for feature set: SF,skills_ios:	 0.10651284459960673
+Score for feature set: SF,skills_react:	 0.10616253580152382
+Score for feature set: SF,skills_linux:	 0.11210325139803068
+Score for feature set: SF,skills_android:	 0.10562141589225052
+Score for feature set: SF,skills_rails:	 0.10590447970065239
+Score for feature set: SF,skills_c:	 0.1098412685983859
+Max Score feature set: SF,seniority_regular	 0.15929458632062707
+
+
+3 features:
+
+Score for feature set: SF,seniority_regular,is_acquired:	 0.17738835657015478
+Score for feature set: SF,seniority_regular,is_public:	 0.17743232980691864
+Score for feature set: SF,seniority_regular,remote_ok:	 0.1792647402782934
+Score for feature set: SF,seniority_regular,NYC:	 0.1785679435338566
+Score for feature set: SF,seniority_regular,LA:	 0.1594054249011251
+Score for feature set: SF,seniority_regular,SEA:	 0.16147727666688472
+Score for feature set: SF,seniority_regular,senior:	 0.1608099209683003
+Score for feature set: SF,seniority_regular,back_end:	 0.15933236273006143
+Score for feature set: SF,seniority_regular,full_stack:	 0.159578860591415
+Score for feature set: SF,seniority_regular,front_end:	 0.16133630991431608
+Score for feature set: SF,seniority_regular,total_investments:	 0.1603350558359567
+Score for feature set: SF,seniority_regular,seniority_senior:	 0.16143993838938137
+Score for feature set: SF,seniority_regular,seniority_junior:	 0.18089110336361475
+Score for feature set: SF,seniority_regular,seniority_manager:	 0.16295543925491107
+Score for feature set: SF,seniority_regular,seniority_staff:	 0.15941575755080312
+Score for feature set: SF,seniority_regular,seniority_cxo:	 0.16591221977685297
+Score for feature set: SF,seniority_regular,seniority_vp:	 0.1612049932632333
+Score for feature set: SF,seniority_regular,seniority_director:	 0.16121392507947652
+Score for feature set: SF,seniority_regular,seniority_intern:	 0.1661235154013521
+Score for feature set: SF,seniority_regular,skills_javascript:	 0.16022589448193272
+Score for feature set: SF,seniority_regular,skills_python:	 0.17087523191403042
+Score for feature set: SF,seniority_regular,skills_html:	 0.16622438894952096
+Score for feature set: SF,seniority_regular,skills_css:	 0.16493118060056106
+Score for feature set: SF,seniority_regular,skills_aws:	 0.1659967794327345
+Score for feature set: SF,seniority_regular,skills_java:	 0.15921659325491105
+Score for feature set: SF,seniority_regular,skills_node:	 0.15926127811130347
+Score for feature set: SF,seniority_regular,skills_ruby:	 0.16020794125389204
+Score for feature set: SF,seniority_regular,skills_angular:	 0.15965110245889907
+Score for feature set: SF,seniority_regular,skills_ios:	 0.16022338223502713
+Score for feature set: SF,seniority_regular,skills_react:	 0.15949721133990613
+Score for feature set: SF,seniority_regular,skills_linux:	 0.1659992509327402
+Score for feature set: SF,seniority_regular,skills_android:	 0.1593210206352036
+Score for feature set: SF,seniority_regular,skills_rails:	 0.15925611040919457
+Score for feature set: SF,seniority_regular,skills_c:	 0.1635160938580245
+Max Score feature set: SF,seniority_regular,seniority_junior	 0.18089110336361475
+
+
+4 features:
+
+Score for feature set: SF,seniority_regular,seniority_junior,is_acquired:	 0.19877925869262128
+Score for feature set: SF,seniority_regular,seniority_junior,is_public:	 0.1989213321015177
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok:	 0.2008108846040041
+Score for feature set: SF,seniority_regular,seniority_junior,NYC:	 0.20004079987306622
+Score for feature set: SF,seniority_regular,seniority_junior,LA:	 0.18103299462138736
+Score for feature set: SF,seniority_regular,seniority_junior,SEA:	 0.1828918942031202
+Score for feature set: SF,seniority_regular,seniority_junior,senior:	 0.18093354417426957
+Score for feature set: SF,seniority_regular,seniority_junior,back_end:	 0.18108761162207337
+Score for feature set: SF,seniority_regular,seniority_junior,full_stack:	 0.1811707489194597
+Score for feature set: SF,seniority_regular,seniority_junior,front_end:	 0.18290537107582983
+Score for feature set: SF,seniority_regular,seniority_junior,total_investments:	 0.1819261285724127
+Score for feature set: SF,seniority_regular,seniority_junior,seniority_senior:	 0.1809154517537126
+Score for feature set: SF,seniority_regular,seniority_junior,seniority_manager:	 0.18383121636049077
+Score for feature set: SF,seniority_regular,seniority_junior,seniority_staff:	 0.18160204958865855
+Score for feature set: SF,seniority_regular,seniority_junior,seniority_cxo:	 0.18840287211082302
+Score for feature set: SF,seniority_regular,seniority_junior,seniority_vp:	 0.18228945041779998
+Score for feature set: SF,seniority_regular,seniority_junior,seniority_director:	 0.1824808530340776
+Score for feature set: SF,seniority_regular,seniority_junior,seniority_intern:	 0.18798332053565364
+Score for feature set: SF,seniority_regular,seniority_junior,skills_javascript:	 0.18179823170766393
+Score for feature set: SF,seniority_regular,seniority_junior,skills_python:	 0.19270771259316188
+Score for feature set: SF,seniority_regular,seniority_junior,skills_html:	 0.18748015035205703
+Score for feature set: SF,seniority_regular,seniority_junior,skills_css:	 0.18644431179569618
+Score for feature set: SF,seniority_regular,seniority_junior,skills_aws:	 0.18712322411849092
+Score for feature set: SF,seniority_regular,seniority_junior,skills_java:	 0.18083048775377597
+Score for feature set: SF,seniority_regular,seniority_junior,skills_node:	 0.18086309449668814
+Score for feature set: SF,seniority_regular,seniority_junior,skills_ruby:	 0.18187084603964448
+Score for feature set: SF,seniority_regular,seniority_junior,skills_angular:	 0.18132633648183866
+Score for feature set: SF,seniority_regular,seniority_junior,skills_ios:	 0.1819726936217381
+Score for feature set: SF,seniority_regular,seniority_junior,skills_react:	 0.18098617067915657
+Score for feature set: SF,seniority_regular,seniority_junior,skills_linux:	 0.18740162384114895
+Score for feature set: SF,seniority_regular,seniority_junior,skills_android:	 0.18105536444281015
+Score for feature set: SF,seniority_regular,seniority_junior,skills_rails:	 0.1808937629651968
+Score for feature set: SF,seniority_regular,seniority_junior,skills_c:	 0.18490260206019105
+Max Score feature set: SF,seniority_regular,seniority_junior,remote_ok	 0.2008108846040041
+
+
+5 features:
+
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,is_acquired:	 0.21480936304746656
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,is_public:	 0.21486388209493634
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC:	 0.21829155379829213
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,LA:	 0.20111539063064204
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,SEA:	 0.20259654814075836
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,senior:	 0.20098805668395325
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,back_end:	 0.20098131400978608
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,full_stack:	 0.20088504118277947
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,front_end:	 0.20305469000635104
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,total_investments:	 0.2017247415043577
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,seniority_senior:	 0.20078045106430528
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,seniority_manager:	 0.2035011837622359
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,seniority_staff:	 0.2014995506190204
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,seniority_cxo:	 0.20680920065626962
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,seniority_vp:	 0.2021703739195098
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,seniority_director:	 0.20232286091224552
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,seniority_intern:	 0.20762905333162734
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_javascript:	 0.20178683868518812
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_python:	 0.2106376730181042
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_html:	 0.20770069141940975
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_css:	 0.2068761085985592
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_aws:	 0.2063302176261029
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_java:	 0.20070018125474415
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_node:	 0.2008118036356211
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_ruby:	 0.2016362970023928
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_angular:	 0.2013290279092158
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_ios:	 0.201729041208642
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_react:	 0.20084828145107964
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_linux:	 0.20583123238142492
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_android:	 0.20087123978169635
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_rails:	 0.20082645305279664
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,skills_c:	 0.20390363815709536
+Max Score feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC	 0.21829155379829213
+
+
+6 features:
+
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired:	 0.23100007905422598
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_public:	 0.2308224862163912
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,LA:	 0.21974732212771733
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,SEA:	 0.22144664081213575
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,senior:	 0.21842137639509518
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,back_end:	 0.21841005355067689
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,full_stack:	 0.21836901591760263
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,front_end:	 0.22094114186706645
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,total_investments:	 0.2191843761691698
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,seniority_senior:	 0.21830843781041762
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,seniority_manager:	 0.22076337264106885
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,seniority_staff:	 0.21906987438196693
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,seniority_cxo:	 0.22419821651324812
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,seniority_vp:	 0.21947737163252365
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,seniority_director:	 0.21987179366511728
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,seniority_intern:	 0.22497379355972663
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_javascript:	 0.21934709125192242
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_python:	 0.22686916012939648
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_html:	 0.22471272874343004
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_css:	 0.22412235034571915
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_aws:	 0.22378889742651256
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_java:	 0.21819879146564827
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_node:	 0.218259678891962
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_ruby:	 0.21895224279016548
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_angular:	 0.2188322568181973
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_ios:	 0.21929121989423583
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_react:	 0.218220193338468
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_linux:	 0.22371583135752962
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_android:	 0.218278044785074
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_rails:	 0.21827030107785975
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,skills_c:	 0.2216866915209514
+Max Score feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired	 0.23100007905422598
+
+
+7 features:
+
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,is_public:	 0.23085956193181884
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,LA:	 0.23238085984811016
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,SEA:	 0.23354530632273984
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,senior:	 0.23120788548508783
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,back_end:	 0.2311038213801606
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,full_stack:	 0.23100946965809768
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,front_end:	 0.23406877590550484
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,total_investments:	 0.23173924852443054
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,seniority_senior:	 0.23091458270133927
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,seniority_manager:	 0.23327450016527607
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,seniority_staff:	 0.231479712595619
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,seniority_cxo:	 0.23581600560581145
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,seniority_vp:	 0.2321596301577165
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,seniority_director:	 0.23257660792696788
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,seniority_intern:	 0.23753454449331468
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_javascript:	 0.23234287475210946
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python:	 0.23851896324307592
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_html:	 0.23776092623314293
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_css:	 0.23711822004200925
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_aws:	 0.2357226101778824
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_java:	 0.23090554253259332
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_node:	 0.2309449509250284
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_ruby:	 0.23127254251783383
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_angular:	 0.23170567144886184
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_ios:	 0.23189030064448585
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_react:	 0.23094565549094292
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_linux:	 0.23553249910009705
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_android:	 0.23095793763902414
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_rails:	 0.2309672894417775
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_c:	 0.23365482489190315
+Max Score feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python	 0.23851896324307592
+
+
+8 features:
+
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,is_public:	 0.23834924825343173
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,LA:	 0.23988103852416465
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,SEA:	 0.2409308427840403
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,senior:	 0.2388538950059102
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,back_end:	 0.2384301766068646
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,full_stack:	 0.2386658212059416
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,front_end:	 0.24057688084525622
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,total_investments:	 0.2392041917847916
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,seniority_senior:	 0.2384222918832154
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,seniority_manager:	 0.2408819425188639
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,seniority_staff:	 0.23893531134724705
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,seniority_cxo:	 0.24315424125345397
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,seniority_vp:	 0.23982230370629012
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,seniority_director:	 0.24018125124878287
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,seniority_intern:	 0.24502214322369026
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_javascript:	 0.24035617011218172
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html:	 0.24507742108676697
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_css:	 0.24434351150984543
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_aws:	 0.24110601182631083
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_java:	 0.23857139741147285
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_node:	 0.23851157100170423
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_ruby:	 0.2385043067588026
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_angular:	 0.23928539577446334
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_ios:	 0.23892440779489432
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_react:	 0.23849133284093552
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_linux:	 0.24069389924345683
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_android:	 0.23833144668355324
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_rails:	 0.23847994730140923
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_c:	 0.2397158500158175
+Max Score feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html	 0.24507742108676697
+
+
+9 features:
+
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,is_public:	 0.2449715779991912
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,LA:	 0.2463805862302394
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,SEA:	 0.24743180888999067
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,senior:	 0.24528358705513878
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,back_end:	 0.24493747682430325
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,full_stack:	 0.2448359148266433
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,front_end:	 0.24537240774411886
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,total_investments:	 0.24571375394835118
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_senior:	 0.2449907315987068
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_manager:	 0.2472584549826013
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_staff:	 0.24552525095384128
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_cxo:	 0.2498753264736649
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_vp:	 0.24627553478639405
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_director:	 0.2466931940080745
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern:	 0.2516244918759187
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_javascript:	 0.24490428515686175
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_css:	 0.2451619856905043
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_aws:	 0.24775618870691718
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_java:	 0.245519202556111
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_node:	 0.24496940586160634
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_ruby:	 0.24522831961269642
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_angular:	 0.2449144681276043
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_ios:	 0.24556884803628506
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_react:	 0.24579820312008221
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_linux:	 0.2471378801628739
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_android:	 0.24494947685262458
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_rails:	 0.2451518510567491
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,skills_c:	 0.24941628763505516
+Max Score feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern	 0.2516244918759187
+
+
+10 features:
+
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,is_public:	 0.25151369806066415
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,LA:	 0.25287983265887776
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,SEA:	 0.2539448590092899
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,senior:	 0.2525145823303418
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,back_end:	 0.2514830657002304
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,full_stack:	 0.2513935762108581
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,front_end:	 0.2519470024250891
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,total_investments:	 0.25225801667063175
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,seniority_senior:	 0.2515541367590512
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,seniority_manager:	 0.25369977577214364
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,seniority_staff:	 0.2521919970052537
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,seniority_cxo:	 0.2565723542831792
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,seniority_vp:	 0.2527369512360541
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,seniority_director:	 0.2531746274522718
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_javascript:	 0.2514594458331241
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_css:	 0.2517092458642131
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_aws:	 0.2542321767961054
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_java:	 0.2520717847063363
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_node:	 0.25151473539636
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_ruby:	 0.2517425202661209
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_angular:	 0.2514387924195095
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_ios:	 0.252181184363158
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_react:	 0.2522731849653587
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_linux:	 0.2536589130916091
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_android:	 0.25149185863650003
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_rails:	 0.25169251255876063
+Score for feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,skills_c:	 0.2560766169175024
+Max Score feature set: SF,seniority_regular,seniority_junior,remote_ok,NYC,is_acquired,skills_python,skills_html,seniority_intern,seniority_cxo	 0.2565723542831792
+
+
