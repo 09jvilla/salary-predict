@@ -3,8 +3,10 @@ import pdb
 import pandas as pd
 import numpy as np
 import math
+import sys
 
-df = pd.read_csv('./data/train.csv')
+df = pd.read_csv('train.csv')
+NUM_SKILLS = 15
 
 ##Filter out positions where min salary is 0 and where max salary is 0
 
@@ -41,6 +43,39 @@ df['SEA'] = df.apply(lambda row: 'Seattle' in row.address, axis=1)
 ##Create binary variable for seniority
 df['senior'] = df.apply(lambda row: row.seniority == 'senior' or row.seniority == 'staff', axis=1)
 
+##Create binary variable for each seniority bucket
+seniority_types = df.seniority.unique()
+for seniority in seniority_types:
+	df[f"seniority_{seniority}"] = df.apply(lambda row: row.seniority == seniority, axis=1)
+
+##Create binary variable for each skill type
+skill_types = df.skills.unique()
+skills = []
+for skill in skill_types:
+	if type(skill) is float:
+		continue
+	skills.extend(skill.split(","))
+
+skills = list(set(skills))
+skill_counts = {skill:0 for skill in skills}
+
+for idx, row in df.iterrows():
+	if type(row.skills) is float:
+		continue
+	for skill in row.skills.split(","):
+		skill_counts[skill] +=1
+
+
+sorted_skills = [item[0] for item in sorted(skill_counts.items(), key=lambda x: x[1], reverse=True)]
+
+
+sorted_skills = sorted_skills[:NUM_SKILLS]
+
+for skill in sorted_skills:
+	df[f"skills_{skill}"] = df.apply(lambda row: skill in str(row.skills), axis=1)
+
+
+
 ##first replace any NaN values in this column; instead put in string "N/A"
 values = {'roles' : "N/A"}
 df = df.fillna(value=values)
@@ -63,7 +98,6 @@ df['avg_size'] = df.apply(avg_size, axis=1)
 
 #####Todo: feature scaling for faster convergence
 
-# pdb.set_trace()
 
 #write out new dataset
 dataset_name = './output/cleaned_data_better.csv'
