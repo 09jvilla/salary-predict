@@ -5,6 +5,7 @@ from statistics import mean
 import sys
 import operator
 import matplotlib.pyplot as plt
+import altair as alt
 
 MAX_FEATS = 10
 
@@ -17,8 +18,14 @@ for column in all_columns:
 	if "seniority_" in column or "skills_" in column:
 		features.append(column)
 
-print(features)
-f = open("output/feature_losses.txt","w")
+# print(features)
+
+
+max_flag = True
+y_string = "max_salary" if max_flag else "min_salary"
+y_data = full_data.filter([y_string])
+
+f = open(f"output/feature_losses_{y_string}.txt","w")
 
 output = ""
 model_features = []
@@ -30,8 +37,7 @@ for iteration in range(MAX_FEATS):
 	for column in features:
 		model_feats_i = model_features + [column]
 		X_i = full_data.filter(model_feats_i)
-		y_max_data = full_data.filter(["max_salary"])
-		X_train, X_test, y_train, y_test = train_test_split(X_i.values, y_max_data.values, test_size=0.05, random_state=1)
+		X_train, X_test, y_train, y_test = train_test_split(X_i.values, y_data.values, test_size=0.05, random_state=1)
 		model = linear_model.LinearRegression()
 		cv_score = mean(map(float,cross_val_score(model, X_train, y_train, cv = 10)))
 		scores[column] = cv_score
@@ -39,7 +45,7 @@ for iteration in range(MAX_FEATS):
 	max_key = max(scores.items(), key=operator.itemgetter(1))[0]
 	model_features.append(max_key)
 	x_run = full_data.filter(model_features)
-	X_train, X_test, y_train, y_test = train_test_split(x_run.values, y_max_data.values, test_size=0.05, random_state=1)
+	X_train, X_test, y_train, y_test = train_test_split(x_run.values, y_data.values, test_size=0.05, random_state=1)
 	model_run = linear_model.LinearRegression()
 	model_run.fit(X_train,y_train)
 	train_scores.append(scores[max_key])
@@ -47,15 +53,23 @@ for iteration in range(MAX_FEATS):
 	print(f"Max Score feature set: {','.join(model_features)}\t {scores[max_key]}\n\n", file=f)
 	features.remove(max_key)
 
+
+# Plot performance
+title = "Maximum" if max_flag else "Minimum"
+title += " Salary Prediction Performance"
 fig, ax = plt.subplots()
 x = range(MAX_FEATS)
 ax.plot(x, train_scores)
 ax.plot(x, test_scores)
-fig.savefig("output/LR_score.png")
+ax.legend(["Train R-squared","Test R-squared"])
+plt.xlabel("Number of Features")
+plt.ylabel("R-squared Value")
+plt.title(title)
+fig.savefig(f"output/LR_score_{y_string}.png")
 plt.show()
 
-print(f"TRAIN SCORES: {train_scores}")
-print(f"TEST SCORES: {test_scores}")
+# print(f"TRAIN SCORES: {train_scores}")
+# print(f"TEST SCORES: {test_scores}")
 
 # X_data = data.filter(features)
 # y_max_data = data.filter(["max_salary"])
