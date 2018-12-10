@@ -7,6 +7,7 @@ from nltk import *
 
 from tree_brute_force_tokenization import tokenize
 from tree_runxgb import runxgb
+from tree_extreme_plots import plotty_plots
 """
 specify what you'd like to train the data on:
 """
@@ -32,5 +33,6 @@ labels = list(raw_x)
 
 x, feature_names = tokenize(raw_x)
 
-runxgb(x,y,feature_names)
+rmse, model, diff, filename = runxgb(x,y,feature_names)
+plotty_plots(diff, model, filename)
 # dtrain = xgb.DMatrix('./data')

@@ -23,7 +23,7 @@ def reg_eval(reg_tree, y_test, y_pred):
 	print('')
 	# print('============================== RESULT ===============================')
 	#########finding assholes with biggest errors, fyi
-	diff = pd.DataFrame({'diff' : (y_test - y_pred)})
+	# diff = pd.DataFrame({'diff' : (y_test - y_pred)})
 	diff = np.array((y_test - y_pred))
 	# pd.DataFrame.mask = mask
 	# big_errors = diff.mask('diff', 80000) # pick out the ones with errors bigger than 80000

@@ -1,5 +1,4 @@
 #tree_brute_force_tokenization.py
-#adapted from Jen's data_process.py
 
 import csv
 import pdb
@@ -11,8 +10,10 @@ import sys
 from nltk import word_tokenize
 import scipy.sparse as sp
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 def preprocess():
+    #adapted from Jen's data_process.py
     df = pd.read_csv('../data/train.csv')
     NUM_SKILLS = 15
 
@@ -76,6 +77,7 @@ def count_vectorize(x, lab):
     vectorizer = CountVectorizer()
     encoded_x = vectorizer.fit_transform(corpus)
     feat_names = vectorizer.get_feature_names()
+    #add label at the end of the feature name to prevent duplicates
     for i in range(len(feat_names)):
         feat_names[i] = feat_names[i] + '_' + lab
     # pdb.set_trace()
@@ -87,6 +89,20 @@ def count_vectorize(x, lab):
 #  [0 2 0 1 0 1 1 0 1]
 #  [1 0 0 1 1 0 1 1 1]
 #  [0 1 1 1 0 0 1 0 1]]
+
+def tfidf_vectorize(x, lab):
+    tfidf  = TfidfVectorizer()
+    corpus = []
+    for j in range(x.shape[0]):
+        corpus.append(x[lab][j])
+    encoded_x = tfidf.fit_transform(corpus)
+    feat_names = tfidf.get_feature_names()
+    # pdb.set_trace()
+    #add label at the end of the feature name to prevent duplicates
+    for i in range(len(feat_names)):
+        feat_names[i] = feat_names[i] + '_' + lab
+
+    return encoded_x, feat_names
 
 def tokenize(x):
     print('=========TOKENIZING YOUR DATA===========')
@@ -103,20 +119,23 @@ def tokenize(x):
             if lab == 'address':
                 x[lab] = x[lab].str.split(pat='_')
                 x[lab] = x[lab].str.join(' ')
-                x_part, feat_part= count_vectorize(x, lab)
                 # this_x = vectorize(x,lab)
+                # x_part, feat_part= count_vectorize(x, lab)
+                x_part, feat_part= tfidf_vectorize(x, lab)
 
             elif lab == 'job_title' or lab=='company_description':
                 x[lab] = x[lab].apply(word_tokenize)
                 x[lab] = x[lab].str.join(' ')
-                x_part, feat_part= count_vectorize(x, lab)
-                # pdb.set_trace()
                 # this_x = vectorize(x,lab)
+                # x_part, feat_part= count_vectorize(x, lab)
+                x_part, feat_part= tfidf_vectorize(x, lab)
+                # pdb.set_trace()
             else:
                 x[lab] = x[lab].str.split(pat=',')
                 x[lab] = x[lab].str.join(' ')
-                x_part, feat_part= count_vectorize(x, lab)
                 # this_x = vectorize(x,lab)
+                # x_part, feat_part= count_vectorize(x, lab)
+                x_part, feat_part= tfidf_vectorize(x, lab)
             # dict_list.append(d)
             # pdb.set_trace()
             # return_x = pd.concat([return_x, this_x], axis=1, sort=False)
@@ -127,7 +146,6 @@ def tokenize(x):
             x_part = np.expand_dims(x[lab].values, axis=1)
             feat_part = [lab]
             # pdb.set_trace()
-
 
         result_x = sp.hstack([result_x, x_part])
         feature_names.extend(feat_part)
