@@ -13,7 +13,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 
-import pydot, pydotplus
+# import pydot, pydotplus
 import graphviz
 from sklearn import preprocessing
 
@@ -81,7 +81,8 @@ for label in labels:
 	X[label].apply(transform)
 
 ############Alternative to label encoding #############################
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.1, random_state = 0)
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.1, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=500, random_state=1991)
 
 # pdb.set_trace()
 
@@ -116,9 +117,9 @@ reg_eval(reg, y_test.values.ravel(),y_pred_reg )
 ###############################################################################
 # Random Forest Regressor ####################################################
 #
-# print("Baseline case - Regressor: ")
-# random_forest_reg(X_train, y_train, X_test, y_test, tune=False)
-# print("Optimized case - Regressor: ")
+print("Baseline case - Regressor: ")
+random_forest_reg(X_train, y_train, X_test, y_test, tune=False)
+print("Optimized case - Regressor: ")
 random_forest_reg(X_train, y_train, X_test, y_test, num_estimator=250, min_samples_split =0.01,
  					max_depth = 20, max_features = 4, random=1,tune=False)
 
@@ -129,56 +130,56 @@ random_forest_reg(X_train, y_train, X_test, y_test, num_estimator=250, min_sampl
 ###############################################################################
 #Classification Tree #########################################################
 # data bucketing
-min_salary = y.min()
-max_salary = y.max()
-num_buckets =200
-increment = (max_salary - min_salary ) * 1.0 /num_buckets
-quick_bucket_cutoff_lines = [min_salary + i * increment for i in range (0,num_buckets)]
-
-#dumb way of bucketing but whatever it works
-new_y = np.zeros(shape=(np.shape(y)))
-for i in range(0,len(y)):
-	for j in range(0,len(quick_bucket_cutoff_lines)):
-		if y[i] > quick_bucket_cutoff_lines[j] :
-			new_y[i] = j
-			continue
-
-# pdb.set_trace()
-y_clf = pd.DataFrame({'bucket_y': new_y})
-X_train, X_test, y_train, y_test = train_test_split(X, y_clf, test_size = 0.1, random_state = 0)
-
-clf = DecisionTreeClassifier()
-clf.fit(X_train, y_train)
-y_pred_clf = clf.predict(X_test)
-y_pred_train_clf = clf.predict(X_train)
-# y_test_np = pd.Series.as_matrix(y_test)
-y_test_np = y_test.values.ravel()
-
+# min_salary = y.min()
+# max_salary = y.max()
+# num_buckets =200
+# increment = (max_salary - min_salary ) * 1.0 /num_buckets
+# quick_bucket_cutoff_lines = [min_salary + i * increment for i in range (0,num_buckets)]
+#
+# #dumb way of bucketing but whatever it works
+# new_y = np.zeros(shape=(np.shape(y)))
+# for i in range(0,len(y)):
+# 	for j in range(0,len(quick_bucket_cutoff_lines)):
+# 		if y[i] > quick_bucket_cutoff_lines[j] :
+# 			new_y[i] = j
+# 			continue
+#
 # # pdb.set_trace()
-# result = pd.DataFrame({'Actual': y_test_np, 'Predicted': y_pred_reg})
-result = pd.DataFrame({'Actual (clf)': y_test_np, 'Predicted (clf)': y_pred_clf})
-
-print('====================SINGLE CLASSIFIER===================')
-print("on train set::")
-clf_eval(clf, y_train.values.ravel(), y_pred_train_clf)
-print("on test set::")
-clf_eval(clf, y_test.values.ravel(), y_pred_clf.ravel())
-np.set_printoptions(precision=2)
-
-print("Optimized case - Classifier: ")
-random_forest_clf(X_train, y_train, X_test, y_test, num_estimator=250, min_samples_split =0.01,
- 					max_depth = 10, max_features = 4, random=1,tune=False)
-# cnf_matrix = confusion_matrix(y_test_np, y_test_np)
+# y_clf = pd.DataFrame({'bucket_y': new_y})
+# X_train, X_test, y_train, y_test = train_test_split(X, y_clf, test_size = 0.1, random_state = 0)
+#
+# clf = DecisionTreeClassifier()
+# clf.fit(X_train, y_train)
+# y_pred_clf = clf.predict(X_test)
+# y_pred_train_clf = clf.predict(X_train)
+# # y_test_np = pd.Series.as_matrix(y_test)
+# y_test_np = y_test.values.ravel()
+#
+# # # pdb.set_trace()
+# # result = pd.DataFrame({'Actual': y_test_np, 'Predicted': y_pred_reg})
+# result = pd.DataFrame({'Actual (clf)': y_test_np, 'Predicted (clf)': y_pred_clf})
+#
+# print('====================SINGLE CLASSIFIER===================')
+# print("on train set::")
+# clf_eval(clf, y_train.values.ravel(), y_pred_train_clf)
+# print("on test set::")
+# clf_eval(clf, y_test.values.ravel(), y_pred_clf.ravel())
+# np.set_printoptions(precision=2)
+#
+# print("Optimized case - Classifier: ")
+# random_forest_clf(X_train, y_train, X_test, y_test, num_estimator=250, min_samples_split =0.01,
+#  					max_depth = 10, max_features = 4, random=1,tune=False)
+# # cnf_matrix = confusion_matrix(y_test_np, y_test_np)
+# # # pdb.set_trace()
+# # plt.figure()
+# # plt.matshow(cnf_matrix)
+# # plt.title('Confusion matrix of the classifier')
+# # plt.colorbar()
+# # filename = './output/confusion_matrix.png'
+# # plt.savefig(filename)
+# # plt.show()
 # # pdb.set_trace()
-# plt.figure()
-# plt.matshow(cnf_matrix)
-# plt.title('Confusion matrix of the classifier')
-# plt.colorbar()
-# filename = './output/confusion_matrix.png'
-# plt.savefig(filename)
-# plt.show()
-# pdb.set_trace()
-# plot_confusion_matrix(cnf_matrix, quick_bucket_cutoff_lines, title='Confusion matrix, without normalization')
-# plt.figure()
-# plot_confusion_matrix(cnf_matrix, quick_bucket_cutoff_lines,normalize = True, title='Confusion matrix, without normalization')
-# plt.show()
+# # plot_confusion_matrix(cnf_matrix, quick_bucket_cutoff_lines, title='Confusion matrix, without normalization')
+# # plt.figure()
+# # plot_confusion_matrix(cnf_matrix, quick_bucket_cutoff_lines,normalize = True, title='Confusion matrix, without normalization')
+# # plt.show()

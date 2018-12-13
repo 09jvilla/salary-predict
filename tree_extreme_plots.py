@@ -75,7 +75,7 @@ def plotty_plots(diff, model, parm_file):
 
     fig6 = plt.figure()
     xgb.plot_importance(model, max_num_features=10)
-    plt.rcParams['figure.figsize'] = [10, 10]
+    # plt.rcParams['figure.figsize'] = [15, 15]
     filename = './output/xgb_importance_plot' + time.strftime("%m%d_%H%M") + '.png'
     plt.savefig(filename)
     # plt.show()
@@ -92,9 +92,11 @@ def plotty_plots(diff, model, parm_file):
     importance.nlargest(20, columns='score').plot(kind='barh')
     most_important = list(importance.nlargest(20, columns='score').index)
 
-    f=open(parm_file, "a+")
-    f.write('\n')
-    f.write('top 20 features:: '+'\n')
+    filename = './output/most_important' + time.strftime("%m%d_%H%M") + '.txt'
+
+    f=open(filename, "w")
+    # f.write('\n')
+    # f.write('top 50 features:: '+'\n')
     for ff in most_important:
         f.write(ff)
         f.write('\n')

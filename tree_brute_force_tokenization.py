@@ -155,3 +155,22 @@ def tokenize(x):
     result_x= sp.lil_matrix(sp.csr_matrix(result_x)[:,1:])
 
     return result_x, feature_names
+
+def hand_picked_x(x, feature_names, filename):
+    build = sp.csr_matrix((x.shape[0],1))
+    new_feature_names = []
+    f = open(filename,'r')
+    linecount = 0
+    for line in f:
+        linecount +=1
+        keyword = line[:-1]
+        new_feature_names.append(keyword)
+        here=feature_names.index(keyword)
+        # pdb.set_trace()
+        # out1 = x.tocsc()[here,here+1]
+        # pdb.set_trace()
+        build=sp.hstack([build,x[:,here]])
+        # pdb.set_trace()
+    print(linecount)
+
+    return sp.lil_matrix(sp.csr_matrix(build)[:,1:]), new_feature_names

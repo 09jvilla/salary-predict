@@ -1,5 +1,6 @@
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
 from sklearn import metrics
 import time
 import pdb
@@ -35,7 +36,8 @@ def quickplot(y_train_rmse, y_test_rmse):
 
 #tree_runxgb.py
 def runxgb(x,y,ft):
-    x_train, x_test, y_train, y_test = train_test_split (x,y, test_size = 0.1)
+    # x_train, x_test, y_train, y_test = train_test_split (x,y, test_size = 0.1)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=500, random_state=1991)
 
     xgb_train = xgb.DMatrix(x_train, label = y_train, feature_names = ft)
     xgb_train_tester = xgb.DMatrix(x_train, feature_names = ft)
@@ -47,9 +49,9 @@ def runxgb(x,y,ft):
     #         'silent': 0, 'objective': 'reg:linear',
     #         'tree_method': 'exact', 'eval_metric': 'rmse'}
 
-    params = {'max_depth': 5, 'gamma': 0.1, 'seed' : 27,
-                'min_child_weight' : 1, 'subsample': .8, 'scale_pos_weight' : 1,
-                'lambda': .2, 'eta': .3, 'colsample_bytree': 0.3,
+    params = {'max_depth': 5, 'gamma': .1, 'seed' : 27,
+                'min_child_weight' : .5, 'subsample': .5, 'scale_pos_weight' : .8,
+                'lambda': .8, 'eta': 0.3, 'colsample_bytree': 0.8,
                 'silent': 1, 'objective': 'reg:linear',
                 'tree_method': 'exact', 'eval_metric': 'rmse'}
 
@@ -102,11 +104,19 @@ def runxgb(x,y,ft):
     diff_train = np.array((y_train - y_pred_train))
     diff_test = np.array((y_test - y_pred))
 
+    cv_results = GridSearchCV(model, params, n_jobs=1,
+                        scoring='rmse', refit=True)
+
+
     # pdb.set_trace()
-    # cv_results = xgb.cv(dtrain=xgb_train, params = params, nfold = 4, num_boost_round=100, early_stopping_rounds = 50, metrics='rmse', seed=123)
-    #
+    # cv_results = xgb.cv(dtrain=xgb_train, params = params, nfold = 5, num_boost_round=500, early_stopping_rounds = 50, metrics='rmse', seed=123)
+
+
     # train_val = cv_results['train-rmse-mean'].tail(1)
     # test_val = cv_results['test-rmse-mean'].tail(1)
+    #
+    # print('CV result, train RMSE', str(train_val))
+    # print('CV result, test RMSE', str(test_val))
     # f=open(filename, "a+")
     # f.write('CV result, train RMSE: '+ str(train_val)+'\n')
     # f.write('CV result, test RMSE: '+str(test_val)+'\n')
