@@ -22,7 +22,7 @@ for column in all_columns:
 # print(features)
 
 
-max_flag = False
+max_flag = True
 y_string = "max_salary" if max_flag else "min_salary"
 y_data = full_data.filter([y_string])
 
@@ -39,6 +39,7 @@ loss_functions = {
 	"Median Abs Error": median_absolute_error,
 	"R-squared": r2_score
 }
+
 final_scores = {}
 for score_name, cv_scorer_type in cv_scorers_types.items():
 	print(f"Running scores for {score_name}")
@@ -61,16 +62,20 @@ for score_name, cv_scorer_type in cv_scorers_types.items():
 			cv_score = mean(map(float,cross_val_score(model, X_train, y_train, scoring=cv_scorer_type, cv = 10)))
 			scores[column] = cv_score
 			print(f"Score for feature set: {','.join(model_feats_i)}:\t {cv_score}", file=f)
+
+		# add feature with best performance to feature set
 		max_key = max(scores.items(), key=operator.itemgetter(1))[0]
 		model_features.append(max_key)
 		x_run = full_data.filter(model_features)
+
+		# resplit data with the appropriate model features
 		X_train, X_test, y_train, y_test = train_test_split(x_run.values, y_data.values, test_size=500, random_state=1991)
 		model_run = linear_model.LinearRegression()
 		model_run.fit(X_train,y_train)
+
+		# Take the root if it is mean squared error
 		train_score_i = abs(scores[max_key])**(1/2) if score_name == "Mean Sq. Error" else abs(scores[max_key])
 		train_scores.append(train_score_i)
-		# y_pred_train = model_run.predict(X_train)
-		# train_scores.append(loss_func(y_train, y_pred_train))
 		y_pred_test = model_run.predict(X_test)
 		test_score_i = loss_func(y_test,y_pred_test)
 		test_score_i = test_score_i**(1/2) if score_name == "Mean Sq. Error" else test_score_i
