@@ -45,8 +45,22 @@ df['senior'] = df.apply(lambda row: row.seniority == 'senior' or row.seniority =
 
 ##Create binary variable for each seniority bucket
 seniority_types = df.seniority.unique()
+seniority_counts = {}
 for seniority in seniority_types:
 	df[f"seniority_{seniority}"] = df.apply(lambda row: row.seniority == seniority, axis=1)
+	s = f"seniority_{seniority}"
+	print(f"{seniority}: {df[s].sum()}")
+
+
+##Seniority categories for GMM
+gmm_seniority = {}
+gmm_seniority["junior"] = ["junior","intern"]
+gmm_seniority["regular"] = ["regular"]
+gmm_seniority["senior"] = ["senior","staff","manager"]
+gmm_seniority["executive"] = ["director","vp","cxo"]
+
+for category, group in gmm_seniority.items():
+	df[f"gmm_{category}"] = df.apply(lambda row: row.seniority in group, axis=1)
 
 ##Create binary variable for each skill type
 skill_types = df.skills.unique()
