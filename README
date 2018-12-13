@@ -1,3 +1,5 @@
-This is a readme.
+# Readme
 
-Save relevant graphs in output directory, save you data in data directory. 
+The code for our models can be found in the following files:
+- **Data Processing**: `data_process.py`
+- Linear Regression s
