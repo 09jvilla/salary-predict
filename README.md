@@ -5,7 +5,7 @@ The code for our models can be found in the following files:
 - **Linear Regression (manual features)**: `LR.py`
 - **Linear Regression (TF-IDF)**:
 - **Linear Regression (GloVe)**:
-- **XGBoosted Trees**:'xgboosted_tree.py'
+- **XGBoosted Trees**:`xgboosted_tree.py`
 - **Multi-class SVM**:
 - **Gaussian Mixture Models**: `gmm_seniority.py`
 
