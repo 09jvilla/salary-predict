@@ -4,8 +4,7 @@ import numpy as np
 import pdb
 import nltk
 from nltk import *
-
-from tree_brute_force_tokenization import tokenize
+from tree_brute_force_tokenization import tokenize, hand_picked_x
 from tree_runxgb import runxgb
 from tree_extreme_plots import plotty_plots
 """
@@ -32,7 +31,12 @@ labels = list(raw_x)
 # additional data processing
 
 x, feature_names = tokenize(raw_x)
+x, feature_names = hand_picked_x(x, feature_names, './output/most_important1213_1115.txt')
+
+# pdb.set_trace()
 
 rmse, model, diff, filename = runxgb(x,y,feature_names)
+
+# cver.fit(x, y)
 plotty_plots(diff, model, filename)
 # dtrain = xgb.DMatrix('./data')

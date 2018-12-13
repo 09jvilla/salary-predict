@@ -14,7 +14,7 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn import metrics
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
-import pydot, pydotplus
+# import pydot, pydotplus
 import graphviz
 from plot_confusion_matrix import plot_confusion_matrix
 from tree_evaluation import reg_eval, clf_eval
