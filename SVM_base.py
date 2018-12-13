@@ -8,7 +8,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import LinearSVC, SVC, SVR
 from sklearn.metrics import accuracy_score
 
-df = pd.read_csv('data/cleaned_data.csv')
+SEED_VAL = 1991
+
+df = pd.read_csv('data/cleaned_data_ENG.csv')
 
 #figure out salary buckets
 min_sal_sorted_df = df.sort_values(by=['min_salary'])
@@ -17,7 +19,7 @@ max_sal_sorted_df = df.sort_values(by=['max_salary'])
 plt.plot(min_sal_sorted_df['min_salary'].tolist(), 'bo')
 plt.plot(max_sal_sorted_df['max_salary'].tolist(), 'ro')
 
-plt.savefig("salary_scurve.png")
+#plt.savefig("salary_scurve.png")
 
 #Ok lets do some bucketing
 min_sal_buckets = range(50000,210000,10000)
@@ -55,7 +57,7 @@ def min_class_bucket(row):
 df['salary_bucket'] = df.apply(min_class_bucket, axis=1)
 df = df.astype( {'salary_bucket':int } )
 
-df.to_csv("data/train_data_with_salary_buckets.csv")
+df.to_csv("data/train_data_with_salary_buckets_ENG.csv")
 
 df_XforSVM = df.filter(['is_acquired', 'is_public', 'remote_ok', 'NYC', \
 	'LA', 'SF', 'SEA', 'senior', 'back_end', 'full_stack', 'front_end'], axis=1)
@@ -63,7 +65,7 @@ df_YforSVM = df.filter(['salary_bucket'], axis=1 )
 
 clf = LinearSVC(random_state=0, tol=1e-5, max_iter=10000)
 
-X_train, X_test, Y_train, Y_test = train_test_split( df_XforSVM.values, df_YforSVM.values.ravel() , test_size=0.05)
+X_train, X_test, Y_train, Y_test = train_test_split( df_XforSVM.values, df_YforSVM.values.ravel() , test_size=500, random_state=1991)
 
 clf.fit(X_train, Y_train)
 
@@ -106,14 +108,14 @@ plt.bar(x_count,y_count)
 plt.xlabel('Error Misclassification')
 plt.ylabel('Number of Occurences')
 plt.title('Number of Buckets SVM Was Off By')
-plt.show()
+#plt.show()
 
 plt.clf()
 plt.bar(x_count_abs,y_count_abs)
 plt.xlabel('Magnitude of Error Misclassification')
 plt.ylabel('Number of Occurences')
 plt.title('Number of Buckets SVM Was Off By')
-plt.show()
+#plt.show()
 
 #total records
 total_rec = sum(y_count_abs)
@@ -129,7 +131,7 @@ plt.bar(unique,counts)
 plt.xlabel('Magnitude of Error Misclassification on Test Set')
 plt.ylabel('Number of Occurences')
 plt.title('Number of Buckets SVM Was Off By on Test Set')
-plt.show()
+#plt.show()
 
 total_rec = sum(counts)
 zero_to_one_bucket = sum(counts[0:2])
@@ -162,7 +164,7 @@ plt.xlabel("Pair (true_class,predicted_class)")
 plt.ylabel("Count")
 plt.title("Error Analysis for Multi-Class SVM")
 plt.savefig("SVM_error_analysis")
-plt.show()
+#plt.show()
 
 ##Notes:
 #Only predicting really into 3 classes for anything 0,3,4,6 and sometimes 8.

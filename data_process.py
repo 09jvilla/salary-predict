@@ -24,6 +24,7 @@ df = df[df['job_title'].str.contains("engineer") | df['job_title'].str.contains(
 		| df['job_title'].str.contains("developer") | df['job_title'].str.contains("Developer")]
 
 print("Filtered out non-engineering roles. New size " + str(len(df)) )
+<<<<<<< HEAD
 #
 # def bay_area_filter(row):
 # 	found = False
@@ -73,6 +74,71 @@ print("Filtered out non-engineering roles. New size " + str(len(df)) )
 #
 # for skill in sorted_skills:
 # 	df[f"skills_{skill}"] = df.apply(lambda row: skill in str(row.skills), axis=1)
+=======
+
+def bay_area_filter(row):
+	found = False
+	found |= 'San Francisco' in row.address
+	found |= 'Menlo Park' in row.address
+	found |= 'Palo Alto' in row.address
+	found |= 'Mountain View' in row.address
+	found |= 'Redwood City' in row.address
+	return found
+
+#Create New Columns for geographies
+df['NYC'] = df.apply(lambda row: 'New York' in row.address, axis=1)
+df['LA'] = df.apply(lambda row: 'Los Angeles' in row.address, axis=1)
+df['SF'] = df.apply(bay_area_filter, axis=1)
+df['SEA'] = df.apply(lambda row: 'Seattle' in row.address, axis=1)
+
+##Create binary variable for seniority
+df['senior'] = df.apply(lambda row: row.seniority == 'senior' or row.seniority == 'staff', axis=1)
+
+##Create binary variable for each seniority bucket
+seniority_types = df.seniority.unique()
+seniority_counts = {}
+for seniority in seniority_types:
+	df[f"seniority_{seniority}"] = df.apply(lambda row: row.seniority == seniority, axis=1)
+	s = f"seniority_{seniority}"
+	print(f"{seniority}: {df[s].sum()}")
+
+
+##Seniority categories for GMM
+gmm_seniority = {}
+gmm_seniority["junior"] = ["junior","intern"]
+gmm_seniority["regular"] = ["regular"]
+gmm_seniority["senior"] = ["senior","staff","manager"]
+gmm_seniority["executive"] = ["director","vp","cxo"]
+
+for category, group in gmm_seniority.items():
+	df[f"gmm_{category}"] = df.apply(lambda row: row.seniority in group, axis=1)
+
+##Create binary variable for each skill type
+skill_types = df.skills.unique()
+skills = []
+for skill in skill_types:
+	if type(skill) is float:
+		continue
+	skills.extend(skill.split(","))
+
+skills = list(set(skills))
+skill_counts = {skill:0 for skill in skills}
+
+for idx, row in df.iterrows():
+	if type(row.skills) is float:
+		continue
+	for skill in row.skills.split(","):
+		skill_counts[skill] +=1
+
+
+sorted_skills = [item[0] for item in sorted(skill_counts.items(), key=lambda x: x[1], reverse=True)]
+
+
+sorted_skills = sorted_skills[:NUM_SKILLS]
+
+for skill in sorted_skills:
+	df[f"skills_{skill}"] = df.apply(lambda row: skill in str(row.skills), axis=1)
+>>>>>>> e20d5e0fe2dd946acea04d20645fb228d226f44a
 
 
 
